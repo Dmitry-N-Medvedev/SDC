@@ -1,9 +1,9 @@
 import {
   Directions,
-} from './constants/Directions.mjs';
+} from '@dmitry-n-medvedev/libcommon/constants/Directions.mjs';
 import {
   Degrees,
-} from './constants/Degrees.mjs';
+} from '@dmitry-n-medvedev/libcommon/constants/Degrees.mjs';
 
 const BACKWARDS_DEGREE = (Degrees.MIN_DEGREE + Degrees.MAX_DEGREE) / 2;
 
@@ -16,11 +16,11 @@ export const calculateDirection = (heading = null, target = null) => {
     throw new ReferenceError('target is undefined');
   }
 
-  if (typeof heading !== 'number') {
+  if (typeof heading !== 'number' || Number.isNaN(heading) === true) {
     throw new TypeError('heading is not a number');
   }
 
-  if (typeof target !== 'number') {
+  if (typeof target !== 'number' || Number.isNaN(target) === true) {
     throw new TypeError('target is not a number');
   }
 
