@@ -1,24 +1,21 @@
 {
-  "name": "@dmitry-n-medvedev/libdirectioncalculator",
+  "name": "@dmitry-n-medvedev/libcommon",
   "version": "0.0.0",
-  "description": "[lib] calculate direction of a robot",
+  "description": "[lib] common stuff",
   "engines": {
     "node": "=15.5.1",
     "pnpm": "=5.14.3"
   },
   "engineStrict": true,
   "type": "module",
-  "main": "./calculateDirection.mjs",
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./ --ext .mjs",
-    "test": "pnpm run lint && cross-env NODE_ENV=test NODE_DEBUG=calculateDirection ./node_modules/.bin/c8 ./node_modules/.bin/mocha -- --trace-warnings",
+    "test": "pnpm run lint && cross-env NODE_ENV=test NODE_DEBUG=libCommon ./node_modules/.bin/c8 ./node_modules/.bin/mocha -- --trace-warnings",
     "coverage": "./node_modules/.bin/c8 report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov --disable=gcov"
   },
   "author": "Dmitry N. Medvedev <dmitry.medvedev@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "@dmitry-n-medvedev/libcommon": "workspace:^0.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "c8": "^7.4.0",
     "chai": "^4.2.0",

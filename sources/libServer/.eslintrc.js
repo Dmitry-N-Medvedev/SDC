@@ -14,7 +14,7 @@ module.exports = {
   ignorePatterns: [
     '/node_modules/*',
   ],
-  parser: 'espree',
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',

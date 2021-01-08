@@ -1,14 +1,14 @@
 import mocha from 'mocha';
 import chai from 'chai';
 import {
-  calculateDirection,
-} from '../calculateDirection.mjs';
-import {
   Directions,
-} from '../constants/Directions.mjs';
+} from '@dmitry-n-medvedev/libcommon/constants/Directions.mjs';
 import {
   Degrees,
-} from '../constants/Degrees.mjs';
+} from '@dmitry-n-medvedev/libcommon/constants/Degrees.mjs';
+import {
+  calculateDirection,
+} from '../calculateDirection.mjs';
 
 const {
   describe,
