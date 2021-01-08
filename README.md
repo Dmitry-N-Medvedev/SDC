@@ -1,15 +1,3 @@
-<style>
-  h1, h2 {
-    display: flex;
-    justify-content:flex-end;
-    align-items:center;
-
-    padding: 0 1rem;
-
-    background-color: lightgrey;
-  }
-</style>
-
 # Steering Direction Challenge
 
 Imagine a bright future where humanity will be able to craft buildings on remote planets with robots.
