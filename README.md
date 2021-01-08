@@ -2,9 +2,7 @@
 
 Imagine a bright future where humanity will be able to craft buildings on remote planets with robots.
 
-<div style="display:flex;justify-content:center;align-items:center">
-  <img src="docs/robot.jpg" width="200" alt="robot" />
-</div>
+<img src="docs/robot.jpg" width="200" alt="robot" />
 
 Unfortunately our trusty robot friend *​Crafty​* is not so bright, he can only drive forward or rotate left and right.
 As a Craftnote Engineer your challenge is to write a microservice with Node.js and TypeScript that calculates steering directions for *​Crafty​* through a REST API.
@@ -31,9 +29,7 @@ The response of the service should be a JSON object that contains the `​direct
 
 The following diagram visualizes these heading and target values. Both numbers are provided as degrees ranging from `0°` to `359°`.
 
-<div style="display:flex;justify-content:center;align-items:center">
-  <img src="docs/360.png" width="600" />
-</div>
+<img src="docs/360.png" width="600" />
 
 ## REQUIREMENTS
 
