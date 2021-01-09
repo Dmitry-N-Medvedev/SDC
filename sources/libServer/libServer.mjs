@@ -1,7 +1,7 @@
 import uWS from 'uWebSockets.js';
 import {
-  calculateDirection,
-} from '@dmitry-n-medvedev/libdirectioncalculator';
+  handleDirection,
+} from './handlers/handleDirection.mjs';
 
 export class LibServer {
   #config = null;
@@ -27,20 +27,7 @@ export class LibServer {
 
     return new Promise((resolve, reject) => {
       this.#server = uWS.App({})
-        .get('/direction', (res, req) => {
-          try {
-            const heading = parseFloat(req.getQuery('heading'));
-            const target = parseFloat(req.getQuery('target'));
-            const direction = calculateDirection(heading, target);
-
-            res.end(JSON.stringify({
-              direction,
-            }));
-          } catch (anyError) {
-            res.writeStatus(`400 ${anyError.message}`);
-            res.end();
-          }
-        })
+        .get('/direction', handleDirection)
         .listen(this.#config.port, (handle) => {
           if (typeof handle === 'undefined') {
             reject(new Error(`failed to start on ${this.#config.port} port`));
