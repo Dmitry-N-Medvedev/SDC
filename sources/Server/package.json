@@ -1,5 +1,5 @@
 {
-  "name": "@dmitry-n-medvedev/libserver",
+  "name": "@dmitry-n-medvedev/server",
   "version": "0.0.0",
   "description": "[lib] server implementation",
   "engines": {
@@ -7,18 +7,16 @@
     "pnpm": "=5.14.3"
   },
   "engineStrict": true,
-  "main": "./libServer.mjs",
+  "main": "index.mjs",
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./ --ext .mjs",
-    "test": "pnpm run lint && cross-env NODE_ENV=test NODE_DEBUG=LibServer,specs ./node_modules/.bin/c8 ./node_modules/.bin/mocha -- --trace-warnings",
+    "test": "pnpm run lint && cross-env NODE_ENV=test NODE_DEBUG=SDC_SERVER,specs ./node_modules/.bin/c8 ./node_modules/.bin/mocha -- --trace-warnings",
     "coverage": "./node_modules/.bin/c8 report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov --disable=gcov"
   },
   "author": "Dmitry N. Medvedev <dmitry.medvedev@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@dmitry-n-medvedev/libcommon": "workspace:^0.0.0",
-    "@dmitry-n-medvedev/libdirectioncalculator": "workspace:^0.0.0",
-    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v18.12.0"
+    "@dmitry-n-medvedev/libserver": "workspace:^0.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -39,10 +37,12 @@
     "eslint-plugin-chai-friendly": "^0.6.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
+    "execa": "^5.0.0",
     "got": "^11.8.1",
     "mocha": "^8.2.1",
     "nanoid": "^3.1.20",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "which": "^2.0.2"
   },
   "mocha": {
     "allow-uncaught": false,
