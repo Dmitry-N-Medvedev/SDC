@@ -9,10 +9,10 @@ import {
 config();
 
 const LOG_ALL_DOMAIN = '';
-const debuglog = util.debuglog(process.env.SDC_SERVER ?? LOG_ALL_DOMAIN);
+const debuglog = util.debuglog(process.env.NODE_DEBUG ?? LOG_ALL_DOMAIN); // process.env.NODE_DEBUG ?? LOG_ALL_DOMAIN
 const port = parseInt(process.env.UWS_PORT, 10);
 
-debuglog('process.env.SDC_SERVER:', process.env.SDC_SERVER);
+debuglog('process.env.NODE_DEBUG:', process.env.NODE_DEBUG);
 debuglog('process.env.UWS_PORT:', process.env.UWS_PORT);
 
 if (Number.isNaN(port) === true) {

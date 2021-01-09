@@ -1,7 +1,10 @@
+import util from 'util';
 import uWS from 'uWebSockets.js';
 import {
   handleDirection,
 } from './handlers/handleDirection.mjs';
+
+const debuglog = util.debuglog('LIB_SERVER');
 
 export class LibServer {
   #config = null;
@@ -18,6 +21,8 @@ export class LibServer {
     }
 
     this.#config = Object.freeze({ ...config });
+
+    debuglog('config:', JSON.stringify(this.#config));
   }
 
   async start() {
@@ -35,6 +40,7 @@ export class LibServer {
 
           this.#handle = handle;
 
+          debuglog(`started on ${this.#config.port} port`);
           resolve();
         });
     });
@@ -52,6 +58,7 @@ export class LibServer {
         this.#handle = null;
         this.#server = null;
 
+        debuglog(`stopped listening on ${this.#config.port} port`);
         resolve();
       }
     });
