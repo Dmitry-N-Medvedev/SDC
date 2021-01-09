@@ -116,7 +116,7 @@ importers:
       nanoid: ^3.1.20
       node-fetch: ^2.6.1
       uWebSockets.js: 'github:uNetworking/uWebSockets.js#v18.12.0'
-  sources/servers/Server:
+  sources/servers/api:
     dependencies:
       '@dmitry-n-medvedev/libserver': 'link:../../libs/libServer'
     devDependencies:
