@@ -15,7 +15,7 @@ module.exports = {
         NODE_DEBUG: 'SDC_SERVER',
         UWS_PORT: 9091,
       },
-      watch: '.',
+      watch: false,
     },
   ],
 };
