@@ -17,7 +17,8 @@
   "author": "Dmitry N. Medvedev <dmitry.medvedev@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@dmitry-n-medvedev/libserver": "workspace:^0.0.0"
+    "@dmitry-n-medvedev/libserver": "workspace:^0.0.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -32,7 +33,6 @@
     "chai": "^4.2.0",
     "codecov": "^3.8.1",
     "cross-env": "^7.0.3",
-    "dotenv": "^8.2.0",
     "eslint": "^7.17.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-chai-friendly": "^0.6.0",
