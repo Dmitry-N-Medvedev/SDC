@@ -4,11 +4,12 @@
   "description": "[lib] server implementation",
   "engines": {
     "node": "=15.5.1",
-    "pnpm": "=5.14.3"
+    "pnpm": "=5.15.0"
   },
   "engineStrict": true,
   "main": "index.mjs",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "lint": "./node_modules/.bin/eslint ./ --ext .mjs",
     "test": "pnpm run lint && cross-env NODE_ENV=test NODE_DEBUG=SDC_SERVER,specs ./node_modules/.bin/c8 ./node_modules/.bin/mocha -- --trace-warnings",
     "coverage": "./node_modules/.bin/c8 report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov --disable=gcov"

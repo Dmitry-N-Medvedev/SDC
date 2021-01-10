@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'sdc http server',
-      script: './index.mjs',
+      script: './sources/servers/api/index.mjs',
       instances: 'max',
       exec_mode: 'cluster',
       // increment_var: 'UWS_PORT',
