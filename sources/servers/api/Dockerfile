@@ -29,5 +29,7 @@ FROM node-pnpm-pm2 AS reduce-pm2-rights
 ENV PATH=~/.volta/bin:$PATH
 USER root
 RUN deluser pm2 root && usermod -aG nogroup pm2 && chown pm2:nogroup /home/pm2
+
+FROM reduce-pm2-rights as sys-cleanup
 RUN apt-get autoremove --purge --assume-yes && apt-get clean --assume-yes
 USER pm2
