@@ -1,7 +1,5 @@
 ARG DEBIAN_FRONTEND=noninteractive
 
-# ENV NODE_ENV=production
-
 FROM debian:latest AS os-base
 SHELL ["/bin/bash", "-c"]
 RUN apt-get --assume-yes update && \
@@ -26,10 +24,19 @@ RUN volta install node@15.5.1 && \
     pnpm config set store-dir ~/.pnpm-store
 
 FROM node-pnpm-pm2 AS reduce-pm2-rights
-ENV PATH=~/.volta/bin:$PATH
 USER root
 RUN deluser pm2 root && usermod -aG nogroup pm2 && chown pm2:nogroup /home/pm2
 
 FROM reduce-pm2-rights as sys-cleanup
 RUN apt-get autoremove --purge --assume-yes && apt-get clean --assume-yes
 USER pm2
+
+FROM sys-cleanup as copy-files
+WORKDIR /dsc
+ADD --chown=pm2:nogroup ./ .
+RUN pnpm --recursive install
+
+FROM copy-files as ready-to-rock-and-roll
+ENV PATH=~/.volta:$PATH
+ENV NODE_ENV=production
+CMD ["pm2", "start", "ecosystem.config.js"]

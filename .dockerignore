@@ -1,0 +1,14 @@
+*/*/.DS_Store
+*/*/node_modules
+*/*/coverage
+*/*/specs
+*/*/scripts
+*/*/docs
+*/*/.dockerignore
+*/*/.eslintrc.js
+*/*/.gitignore
+*/*/.travis.yml
+*/*/codecov.yml
+*/*/Dockerfile
+*/*/*.md
+*/*/.git*
