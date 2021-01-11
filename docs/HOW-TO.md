@@ -40,7 +40,7 @@ This function is the main outcome of this project. Please come back to me with *
 
 The [libServer](../sources/libs/libServer) hosts implementation of the HTTP server. The server exposes the `/direction` endpoint. Its code resides in the [libServer.mjs](../sources/libs/libServer/libServer.mjs) and the [handleDirection.mjs](../sources/libs/libServer/handlers/handleDirection.mjs) files.
 
-You will not see the notorious (a.k.a. *the bloated*, *the slow*, *the hype*) [Express.js](https://expressjs.com/) here. All the heavy lifting is done by the brilliant [µWebSockets.js](https://github.com/uNetworking/uWebSockets.js). Take your time, go check it out. I urge you to especially please see the [Motivation and goals](https://github.com/uNetworking/uWebSockets/blob/master/misc/READMORE.md) of the project. **`It's just awesome`**.
+You will not see the notorious (a.k.a. *the bloated*, *the slow*, *the hype*) [Express.js](https://expressjs.com/) here. All the heavy lifting is done by the brilliant [µWebSockets.js](https://github.com/uNetworking/uWebSockets.js). Take your time, go check it out. I urge you to especially see the [Motivation and goals](https://github.com/uNetworking/uWebSockets/blob/master/misc/READMORE.md) of the project. **`It's just awesome`**.
 
 ## HOW TO SETUP IT ALL
 
