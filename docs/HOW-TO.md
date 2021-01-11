@@ -36,6 +36,7 @@ The [libDirectionCalculator](../sources/libs/libDirectionCalculator) with a sing
 
 This function is the main outcome of this project. Please come back to me with *any* suggestions/arguments/general feedback.
 
+I allowed myself to decide which direction the robot moves when it is forced to move exactly backwards.
 #### LIBSERVER
 
 The [libServer](../sources/libs/libServer) hosts implementation of the HTTP server. The server exposes the `/direction` endpoint. Its code resides in the [libServer.mjs](../sources/libs/libServer/libServer.mjs) and the [handleDirection.mjs](../sources/libs/libServer/handlers/handleDirection.mjs) files.
