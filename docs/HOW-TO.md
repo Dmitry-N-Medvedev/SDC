@@ -20,7 +20,7 @@ The `docs` directory contains the initial task and images ( which I shamefully t
 
 The scripts directory contains two bash files: [build-container.sh](../scripts/build-container.sh) and [run-container.sh](../scripts/run-container.sh). They are useful if you as lazy as I am to type commands myself over and over again. Have a look at them, come back with any feedback you might have.
 
-The `sources` directory contains the sources, yes. There are two important subdirectories: the [libs](../sources/libs) and the [servers](../sources/servers). They host library sources and the [api](../sources/api) server built on these libraries.
+The `sources` directory contains the sources, yes. There are two important subdirectories: the [libs](../sources/libs) and the [servers](../sources/servers). They host library sources and the [api](../sources/servers/api) server built on these libraries.
 
 ### LIBS
 
