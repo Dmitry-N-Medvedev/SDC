@@ -126,7 +126,7 @@ The `PM2` is used as the manager of the http server cluster within a container.
 
 You will come across the `specs` directories in each of the sub-project of this `monorepo`. They are where all the tests reside.
 
-Being in anywhere inside the root directory of this project type
+Being anywhere inside the root directory of this project type
 
 ```bash
 pnpm --recursive run test
