@@ -3,7 +3,7 @@ import {
   calculateDirection,
 } from '@dmitry-n-medvedev/libdirectioncalculator';
 
-const debuglog = util.debuglog('FN_HANDLE_DIRECTION'); // FN_HANDLE_DIRECTION
+const debuglog = util.debuglog('FN_HANDLE_DIRECTION');
 
 export const handleDirection = async (res, req) => {
   res.aborted = false;

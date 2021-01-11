@@ -5,7 +5,6 @@ module.exports = {
       script: './sources/servers/api/index.mjs',
       instances: 'max',
       exec_mode: 'cluster',
-      // increment_var: 'UWS_PORT',
       env: {
         NODE_ENV: 'development',
         NODE_DEBUG: 'SDC_SERVER,LIB_SERVER,FN_HANDLE_DIRECTION',

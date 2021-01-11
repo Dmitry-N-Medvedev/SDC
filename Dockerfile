@@ -31,9 +31,6 @@ RUN volta install node@15.5.1 && \
     volta install pm2@4.5.1 && \
     pnpm config set store-dir ~/.pnpm-store
 
-# FROM reduce-pm2-rights as sys-cleanup
-# RUN apt-get autoremove --purge --assume-yes && apt-get clean --assume-yes
-
 FROM install-node-pnpm-pm2 as copy-project-files
 WORKDIR /home/pm2/dsc
 USER root
@@ -43,7 +40,6 @@ USER pm2
 ENV PATH=$PATH:/home/pm2/.volta/tools/image/node/15.5.1/bin
 RUN pnpm --recursive install
 RUN pm2 start ./ecosystem.config.js && pm2 save && pm2 stop all
-# RUN pm2 startup systemd -u pm2 --hp /home/pm2 > /dev/null 2>&1
 
 FROM copy-project-files as ready-to-rock-and-roll
 LABEL maintainer="Dmitry N. Medvedev <dmitry.medvedev@gmail.com>"
