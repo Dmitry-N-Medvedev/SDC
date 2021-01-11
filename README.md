@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.com/Dmitry-N-Medvedev/SDC.svg?branch=main)](https://travis-ci.com/Dmitry-N-Medvedev/SDC)
 [![codecov](https://codecov.io/gh/Dmitry-N-Medvedev/SDC/branch/main/graph/badge.svg?token=iObuPll58h)](https://codecov.io/gh/Dmitry-N-Medvedev/SDC)
 
+Please see the [How To guide here](/docs/HOW-TO.md).
+
 Imagine a bright future where humanity will be able to craft buildings on remote planets with robots.
 
 <img src="docs/robot.jpg" width="200" alt="robot" />
