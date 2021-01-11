@@ -104,7 +104,7 @@ So far so good.
 
 ### PNPM
 
-The `pnpm` is the best node package ( and monorepo ) manager *der Welt*.
+The `pnpm` is the best node package ( and monorepo ) manager *der Welt*. At least this is true for javascript projects.
 
 > pnpm uses a content-addressable filesystem to store all files from all module directories on a disk. When using npm or Yarn, if you have 100 projects using lodash, you will have 100 copies of lodash on disk. [ use `pnpm` and ] as a result, you save **gigabytes** of space on your disk and you have a lot faster installations!
 
