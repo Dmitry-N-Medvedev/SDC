@@ -68,7 +68,7 @@ volta install pm2@4.5.1
 pnpm config set store-dir ~/.pnpm-store
 ```
 
-To check how it all gone issue the following command
+To check how it all has settled, issue the following command
 
 ```bash
 volta list all
