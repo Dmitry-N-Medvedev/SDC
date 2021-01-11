@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "target": "es2020",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "sources/types/*"]
+    },
+    "typeRoots": ["node_modules/@types", "sources/types"],
+    "outDir": "./compiled"
+  },
+  "include": ["./sources/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

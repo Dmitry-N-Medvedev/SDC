@@ -1,12 +1,14 @@
 module.exports = {
   env: {
-    browser: true,
     es6: true,
     node: true,
   },
   extends: [
-    'airbnb-base',
-    'plugin:node/recommended',
+    'airbnb-typescript/base',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    // the following should stay the last in the array
+    'plugin:prettier/recommended',
   ],
   plugins: [
     'chai-friendly',
@@ -14,9 +16,9 @@ module.exports = {
   ignorePatterns: [
     '/node_modules/*',
   ],
-  parser: 'espree',
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 12,
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
   rules: {
