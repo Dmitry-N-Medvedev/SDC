@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./ --ext .ts --quiet --fix",
     "build": "tsc",
-    "test": "cross-env NODE_ENV=test NODE_DEBUG=libDirectionCalculator ./node_modules/.bin/c8 ./node_modules/.bin/mocha -r ts-node/register -- --trace-warnings",
+    "test": "cross-env NODE_ENV=test NODE_DEBUG=libDirectionCalculator TS_NODE_PROJECT=../../../tsconfig.testing.json ./node_modules/.bin/c8 ./node_modules/.bin/mocha -r ts-node/register -- --trace-warnings",
     "coverage": "./node_modules/.bin/c8 report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov --disable=gcov"
   },
   "author": "Dmitry N. Medvedev <dmitry.medvedev@gmail.com>",

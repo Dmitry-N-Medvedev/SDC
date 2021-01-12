@@ -18,6 +18,8 @@ importers:
       typescript: ^4.1.3
   sources/libs/libCommon:
     devDependencies:
+      '@types/chai': 4.2.14
+      '@types/mocha': 8.2.0
       '@typescript-eslint/eslint-plugin': 4.12.0_a57a3c9683d605c9fef31e466daa018e
       '@typescript-eslint/parser': 4.12.0_eslint@7.17.0
       c8: 7.4.0
@@ -39,6 +41,8 @@ importers:
       node-fetch: 2.6.1
       prettier: 2.2.1
     specifiers:
+      '@types/chai': ^4.2.14
+      '@types/mocha': ^8.2.0
       '@typescript-eslint/eslint-plugin': ^4.12.0
       '@typescript-eslint/parser': ^4.12.0
       c8: ^7.4.0
@@ -95,7 +99,7 @@ importers:
     dependencies:
       '@dmitry-n-medvedev/libcommon': link:../libCommon
       '@dmitry-n-medvedev/libdirectioncalculator': link:../libDirectionCalculator
-      uWebSockets.js: github.com/uNetworking/uWebSockets.js/8cf8b315f10a31428c007b954f10e8c577858e6f
+      uWebSockets.js: github.com/uNetworking/uWebSockets.js/de4a275e5d2ca352367114b905b4cbddc4a272a9
     devDependencies:
       '@babel/cli': 7.12.10_@babel+core@7.12.10
       '@babel/core': 7.12.10
@@ -144,9 +148,10 @@ importers:
       mocha: ^8.2.1
       nanoid: ^3.1.20
       node-fetch: ^2.6.1
-      uWebSockets.js: github:uNetworking/uWebSockets.js#v18.12.0
+      uWebSockets.js: github:uNetworking/uWebSockets.js#v18.13.0
   sources/servers/api:
     dependencies:
+      '@dmitry-n-medvedev/libcommon': link:../../libs/libCommon
       '@dmitry-n-medvedev/libserver': link:../../libs/libServer
       dotenv: 8.2.0
     devDependencies:
@@ -181,6 +186,7 @@ importers:
       '@babel/plugin-transform-runtime': ^7.12.10
       '@babel/preset-env': ^7.12.11
       '@babel/runtime': ^7.12.5
+      '@dmitry-n-medvedev/libcommon': workspace:^0.0.0
       '@dmitry-n-medvedev/libserver': workspace:^0.0.0
       babel-eslint: ^10.1.0
       c8: ^7.4.0
@@ -5607,9 +5613,9 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
-  github.com/uNetworking/uWebSockets.js/8cf8b315f10a31428c007b954f10e8c577858e6f:
+  github.com/uNetworking/uWebSockets.js/de4a275e5d2ca352367114b905b4cbddc4a272a9:
     dev: false
     name: uWebSockets.js
     resolution:
-      tarball: https://codeload.github.com/uNetworking/uWebSockets.js/tar.gz/8cf8b315f10a31428c007b954f10e8c577858e6f
-    version: 18.12.0
+      tarball: https://codeload.github.com/uNetworking/uWebSockets.js/tar.gz/de4a275e5d2ca352367114b905b4cbddc4a272a9
+    version: 18.13.0

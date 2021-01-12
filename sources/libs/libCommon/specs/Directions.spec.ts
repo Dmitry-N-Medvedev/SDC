@@ -2,7 +2,7 @@ import mocha from 'mocha';
 import chai from 'chai';
 import {
   Directions,
-} from '../constants/Directions';
+} from '../src/constants/Directions';
 
 const {
   describe,

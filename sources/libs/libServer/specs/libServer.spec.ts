@@ -1,12 +1,21 @@
 import mocha from 'mocha';
 import chai from 'chai';
-import got from 'got';
+import got, { Got } from 'got';
+import {
+  URLSearchParams,
+} from 'url';
 import {
   Degrees,
-} from '@dmitry-n-medvedev/libcommon/constants/Degrees.mjs';
+} from '@dmitry-n-medvedev/libcommon/constants/Degrees';
+import {
+  QueryParameterNames,
+} from '@dmitry-n-medvedev/libcommon/constants/QueryParameterNames';
 import {
   LibServer,
-} from '../libServer.mjs';
+} from '../libServer';
+import {
+  LibServerConfig,
+} from '../libServerConfig';
 
 const {
   describe,
@@ -19,11 +28,11 @@ const {
 } = chai;
 
 describe('libServer', () => {
-  const config = Object.freeze({
+  const config:LibServerConfig = Object.freeze({
     port: 9091,
   });
-  let libServer = null;
-  const client = got.extend({
+  let libServer:LibServer = null;
+  const client:Got = got.extend({
     prefixUrl: `http://localhost:${config.port}`,
     headers: {},
     responseType: 'json',
@@ -40,14 +49,12 @@ describe('libServer', () => {
     if (libServer !== null) {
       return libServer.stop();
     }
-
-    return Promise.resolve();
   });
 
   it('should calculate direction to equal RIGHT', async () => {
-    const searchParams = new URLSearchParams([
-      ['heading', 310],
-      ['target', 75],
+    const searchParams:URLSearchParams = new URLSearchParams([
+      [QueryParameterNames.HEADING, '310'],
+      [QueryParameterNames.TARGET, '75'],
     ]);
     const response = await client.get('direction', {
       searchParams,
@@ -57,9 +64,9 @@ describe('libServer', () => {
   });
 
   it('should calculate the STRAIGHT direction', async () => {
-    const searchParams = new URLSearchParams([
-      ['heading', 310],
-      ['target', 310],
+    const searchParams:URLSearchParams = new URLSearchParams([
+      [QueryParameterNames.HEADING, '310'],
+      [QueryParameterNames.TARGET, '310'],
     ]);
     const response = await client.get('direction', {
       searchParams,
@@ -72,9 +79,9 @@ describe('libServer', () => {
 
   it('should return either RIGHT or LEFT when the target points 180° backwards', async () => {
     const expectedDirections = ['left', 'right'];
-    const searchParams = new URLSearchParams([
-      ['heading', 310],
-      ['target', 310 % 180],
+    const searchParams:URLSearchParams = new URLSearchParams([
+      [QueryParameterNames.HEADING, '310'],
+      [QueryParameterNames.TARGET, (310 % 180).toString()],
     ]);
     const commands = [];
 
@@ -92,16 +99,17 @@ describe('libServer', () => {
     }
   });
 
-  it('should fail on mistyped parameters', () => new Promise((resolve) => {
+  it('should fail on mistyped parameters', () => new Promise<void>((resolve) => {
     const searchParams = new URLSearchParams([
-      ['heading', 'heading'],
-      ['target', 'target'],
+      [QueryParameterNames.HEADING, 'heading'],
+      [QueryParameterNames.TARGET, 'target'],
     ]);
 
     client.get('direction', {
       searchParams,
       hooks: {
         afterResponse: [
+          // @ts-ignore TODO: fix it
           (res) => {
             expect(res.statusCode === 400);
 
@@ -112,16 +120,17 @@ describe('libServer', () => {
     });
   }));
 
-  it(`should fail on parameters outside of the [ ${Degrees.MIN_DEGREE} .. ${Degrees.MAX_DEGREE} ] boundaries`, () => new Promise((resolve) => {
-    const searchParams = new URLSearchParams([
-      ['heading', Degrees.MIN_DEGREE - 1],
-      ['target', Degrees.MAX_DEGREE + 1],
+  it(`should fail on parameters outside of the [ ${Degrees.MIN_DEGREE} .. ${Degrees.MAX_DEGREE} ] boundaries`, () => new Promise<void>((resolve) => {
+    const searchParams:URLSearchParams = new URLSearchParams([
+      [QueryParameterNames.HEADING, (Degrees.MIN_DEGREE - 1).toString()],
+      [QueryParameterNames.TARGET, (Degrees.MAX_DEGREE + 1).toString()],
     ]);
 
     client.get('direction', {
       searchParams,
       hooks: {
         afterResponse: [
+          // @ts-ignore TODO: fix it
           (res) => {
             expect(res.statusCode === 400);
 

@@ -4,11 +4,11 @@ import {
 } from 'dotenv';
 import {
   LibServer,
-} from '@dmitry-n-medvedev/libserver/libServer.mjs';
+} from '@dmitry-n-medvedev/libserver/src/libServer';
 
 config();
 
-const LOG_ALL_DOMAIN = '';
+const LOG_ALL_DOMAIN:string = '';
 const debuglog = util.debuglog(process.env.NODE_DEBUG ?? LOG_ALL_DOMAIN); // process.env.NODE_DEBUG ?? LOG_ALL_DOMAIN
 const port = parseInt(process.env.UWS_PORT, 10);
 
@@ -22,7 +22,7 @@ if (Number.isNaN(port) === true) {
   process.exit(0);
 }
 
-let libServer = null;
+let libServer:LibServer = null;
 
 const exitNow = async () => {
   if (libServer !== null) {

@@ -16,7 +16,6 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 2018,
         sourceType: 'module',
-        // project: ['tsconfig.json'],
     },
     rules: {
         'no-unused-expressions': 0,

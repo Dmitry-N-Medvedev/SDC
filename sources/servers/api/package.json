@@ -10,13 +10,15 @@
   "main": "index.mjs",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "lint": "./node_modules/.bin/eslint ./ --ext .mjs",
-    "test": "pnpm run lint && cross-env NODE_ENV=test NODE_DEBUG=SDC_SERVER,specs ./node_modules/.bin/c8 ./node_modules/.bin/mocha -- --trace-warnings",
+    "lint": "./node_modules/.bin/eslint ./ --ext .ts --quiet --fix",
+    "build": "tsc",
+    "test": "cross-env NODE_ENV=test NODE_DEBUG=SDC_SERVER,specs TS_NODE_PROJECT=../../../tsconfig.testing.json ./node_modules/.bin/c8 ./node_modules/.bin/mocha -r ts-node/register -- --trace-warnings",
     "coverage": "./node_modules/.bin/c8 report --reporter=text-lcov > ./coverage/coverage.lcov && ./node_modules/.bin/codecov --disable=gcov"
   },
   "author": "Dmitry N. Medvedev <dmitry.medvedev@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@dmitry-n-medvedev/libcommon": "workspace:^0.0.0",
     "@dmitry-n-medvedev/libserver": "workspace:^0.0.0",
     "dotenv": "^8.2.0"
   },
@@ -64,7 +66,17 @@
     "no-config": true,
     "no-opts": true,
     "spec": [
-      "**/specs/*.mjs"
+      "**/specs/*.ts"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts}": [
+      "eslint --fix"
     ]
   }
 }

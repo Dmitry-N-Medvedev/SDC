@@ -2,7 +2,7 @@ import mocha from 'mocha';
 import chai from 'chai';
 import {
   Degrees,
-} from '../constants/Degrees';
+} from '../src/constants/Degrees';
 
 const {
   describe,
