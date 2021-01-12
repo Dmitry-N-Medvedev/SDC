@@ -5,8 +5,14 @@ import which from 'which';
 import execa from 'execa';
 import got from 'got';
 import {
+  URLSearchParams,
+} from 'url';
+import {
   resolve,
 } from 'path';
+import {
+  QueryParameterNames,
+} from '@dmitry-n-medvedev/libcommon/constants/QueryParameterNames';
 
 // eslint-disable-next-line no-unused-vars
 const debuglog = util.debuglog('specs');
@@ -41,7 +47,7 @@ describe('HTTP Server', () => {
       // shell: true,
       env: {
         NODE_DEBUG: 'SDC_SERVER',
-        UWS_PORT: port,
+        UWS_PORT: port.toString(),
       },
       extendEnv: true,
     });
@@ -67,9 +73,9 @@ describe('HTTP Server', () => {
       stdout,
     } = sdc;
 
-    const searchParams = new URLSearchParams([
-      ['heading', 310],
-      ['target', 75],
+    const searchParams:URLSearchParams = new URLSearchParams([
+      [QueryParameterNames.HEADING, '310'],
+      [QueryParameterNames.TARGET, '75'],
     ]);
 
     const response = await client.get('direction', {

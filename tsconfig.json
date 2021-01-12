@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowJs": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noLib": false,
+    "preserveConstEnums": true,
+    "preserveSymlinks": true,
+    "removeComments": true,
+    "strict": false,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "Node",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "sources/types/*"]
+    },
+    "typeRoots": ["node_modules/@types", "sources/types"],
+    "listEmittedFiles": false,
+    "listFiles": false
+  },
+  "include": ["./sources/**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

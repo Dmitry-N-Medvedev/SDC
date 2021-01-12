@@ -19,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/Dmitry-N-Medvedev/SDC/issues"
   },
-  "homepage": "https://github.com/Dmitry-N-Medvedev/SDC#readme"
+  "homepage": "https://github.com/Dmitry-N-Medvedev/SDC#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
 }

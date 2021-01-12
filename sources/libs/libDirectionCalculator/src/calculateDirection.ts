@@ -1,13 +1,13 @@
 import {
   Directions,
-} from '@dmitry-n-medvedev/libcommon/constants/Directions.mjs';
+} from '@dmitry-n-medvedev/libcommon/src/constants/Directions';
 import {
   Degrees,
-} from '@dmitry-n-medvedev/libcommon/constants/Degrees.mjs';
+} from '@dmitry-n-medvedev/libcommon/src/constants/Degrees';
 
 const BACKWARDS_DEGREE = (Degrees.MIN_DEGREE + Degrees.MAX_DEGREE) / 2;
 
-export const calculateDirection = (heading = null, target = null) => {
+export const calculateDirection = (heading:number = null, target:number = null): Directions => {
   if (heading === null) {
     throw new ReferenceError('heading is undefined');
   }
